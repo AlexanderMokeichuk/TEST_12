@@ -22,3 +22,9 @@ export type UserModel = Model<User, unknown, UserMethods>;
 export interface UserApi extends User {
   _id: Types.ObjectId;
 }
+
+export interface PhotoCard {
+  userID: Types.ObjectId;
+  title: string;
+  image: string | null;
+}
