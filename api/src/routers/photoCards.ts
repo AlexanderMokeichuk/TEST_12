@@ -58,20 +58,6 @@ photoCardsRouter.get("/", async (req, res, next) => {
   }
 });
 
-photoCardsRouter.get("/:id", async (req, res, next) => {
-  const id = req.params.id;
-  try {
-    const photoCard = await PhotoCard.findById({_id: id}).select("image");
-    if (photoCard) {
-      return res.send(photoCard);
-    } else {
-      return res.status(422).send({error: "Photo card not found!"});
-    }
-  } catch (e) {
-    next(e);
-  }
-});
-
 photoCardsRouter.delete("/:id", auth, async (req, res, next) => {
   const id = req.params.id;
   const user = (req as RequestWithUser).user!;

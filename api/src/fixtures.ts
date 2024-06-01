@@ -11,7 +11,7 @@ const dropCollection = async (db: mongoose.Connection, collectionName: string) =
   }
 };
 
-const collections = ["users", "photoCards"];
+const collections = ["users", "photocards"];
 
 const run = async () => {
   await mongoose.connect(config.mongoose.db);
