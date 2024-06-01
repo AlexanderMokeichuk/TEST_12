@@ -40,12 +40,17 @@ export interface GlobalError {
   error: string;
 }
 
-export interface PhotoCard {
-  id: string;
+export interface PhotoCardApi {
+  _id: string;
   title: string;
   image: string | null;
   userID: {
-    id: string;
+    _id: string;
     displayName: string;
   };
+}
+
+export interface FormState {
+  title: string;
+  image: File | null;
 }

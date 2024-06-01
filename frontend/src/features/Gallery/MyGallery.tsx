@@ -24,7 +24,7 @@ const MyGallery: React.FC = () => {
         dispatch(fetchGalleryByQuery(user._id));
       }
     }
-  }, [user, dispatch]);
+  }, [user, dispatch, id]);
 
   let showButton = false;
   if (!id) {
