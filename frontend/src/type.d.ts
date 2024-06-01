@@ -39,3 +39,13 @@ export interface ValidationError {
 export interface GlobalError {
   error: string;
 }
+
+export interface PhotoCard {
+  id: string;
+  title: string;
+  image: string | null;
+  userID: {
+    id: string;
+    displayName: string;
+  };
+}
