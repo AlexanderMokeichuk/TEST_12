@@ -72,7 +72,7 @@ photoCardsRouter.get("/:id", async (req, res, next) => {
   }
 });
 
-photoCardsRouter.get("/:id", auth, async (req, res, next) => {
+photoCardsRouter.delete("/:id", auth, async (req, res, next) => {
   const id = req.params.id;
   const user = (req as RequestWithUser).user!;
 
