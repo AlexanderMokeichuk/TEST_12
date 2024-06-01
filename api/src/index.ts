@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import config from "./config";
 import usersRouter from "./routers/users";
+import photoCardsRouter from "./routers/photoCards";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.static("./src/public"));
 
 app.use("/users", usersRouter);
+app.use("/photoCards", photoCardsRouter);
 
 const run = async () => {
   await mongoose.connect(config.mongoose.db);

@@ -23,7 +23,7 @@ export interface UserApi extends User {
   _id: Types.ObjectId;
 }
 
-export interface PhotoCard {
+export interface PhotoCardFront {
   userID: Types.ObjectId;
   title: string;
   image: string | null;

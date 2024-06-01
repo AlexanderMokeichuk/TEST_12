@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
-import {PhotoCard} from "../type";
+import {PhotoCardFront} from "../type";
 
-const PhotoCardSchema = new Schema<PhotoCard>({
+const PhotoCardSchema = new Schema<PhotoCardFront>({
   userID: {
     type: Schema.Types.ObjectId,
     ref: 'User',
