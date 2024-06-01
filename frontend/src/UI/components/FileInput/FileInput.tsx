@@ -17,6 +17,7 @@ const   FileInput: React.FC<Props> = ({name, onChange}) => {
         type="file"
         name={name}
         accept="image/*"
+        required={true}
 
         ref={inputRef}
         onChange={onFileChange}

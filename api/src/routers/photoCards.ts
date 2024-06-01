@@ -42,7 +42,10 @@ photoCardsRouter.get("/", async (req, res, next) => {
       if (!mongoose.Types.ObjectId.isValid(query)) {
         return res.status(422).send({error: "Not found User!!"});
       }
-      const photoCardsByQuery = await PhotoCard.find({userID: query});
+      const photoCardsByQuery = await PhotoCard.find({userID: query}).populate(
+        "userID",
+        "displayName"
+      );
 
       return res.send(photoCardsByQuery);
     }

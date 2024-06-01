@@ -7,6 +7,7 @@ import {logout} from "../../../features/Users/usersThunks";
 import {Link as NavLink, Link} from "react-router-dom";
 import {User} from "../../../type";
 import {API_URL} from "../../../constants";
+import {fetchGalleryByQuery} from "../../../features/Gallery/galleryThunks.ts";
 
 interface Props {
   user: User;
@@ -15,6 +16,7 @@ interface Props {
 const UserMenu: React.FC<Props> = ({user}) => {
   const dispatch = useAppDispatch();
   const [open, setOpen] = React.useState(false);
+
 
   let avatarImage = API_URL + "/" + user.avatar;
   if (user.googleID) {
@@ -65,12 +67,19 @@ const UserMenu: React.FC<Props> = ({user}) => {
       </List>
       <List sx={{
         display: "flex",
+        gap: 1,
         flexDirection: "column",
       }}>
 
-        <Link to={"/addNewCocktail"} style={{textDecoration: "none", color: "#FFF"}}>
+        <Link to={"/MyGallery"} style={{textDecoration: "none", color: "#FFF"}}>
+          <Button variant={"outlined"} color="secondary" onClick={() => dispatch(fetchGalleryByQuery(user._id))}>
+            My Gallery
+          </Button>
+        </Link>
+
+        <Link to={"/new-photo"} style={{textDecoration: "none", color: "#FFF"}}>
           <Button variant={"outlined"} color="secondary">
-            Add Cocktail
+            Add photo
           </Button>
         </Link>
       </List>

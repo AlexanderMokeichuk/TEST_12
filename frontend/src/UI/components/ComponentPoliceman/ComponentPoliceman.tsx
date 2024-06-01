@@ -10,7 +10,8 @@ const ComponentPoliceman: React.FC<PropsWithChildren> = ({children}) => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/register");
+      alert("Access is denied!!");
+      navigate("/");
     }
   }, [user, navigate]);
 
