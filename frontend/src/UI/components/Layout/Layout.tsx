@@ -19,7 +19,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
               color: "black"
             }}
             >
-              Cocktail
+              Gallery
             </Link>
 
             <AppToolbar />
